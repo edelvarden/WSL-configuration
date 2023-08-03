@@ -36,4 +36,4 @@ nvm ls
 # --------------------------------
 # Base installation
 # --------------------------------
-sudo apt install -y npm nodejs git neofetch unzip make
+sudo apt install -y npm nodejs git neofetch unzip make python3-pip
