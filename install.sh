@@ -28,12 +28,14 @@ nvm install --lts
 # Change the version of Node.js to the LTS version:
 nvm use --lts
 
-
 # List what versions of Node are installed:
-nvm ls
+# nvm ls
 
 
 # --------------------------------
 # Base installation
 # --------------------------------
-sudo apt install -y npm nodejs git neofetch unzip make python3-pip
+sudo apt install -y git neofetch unzip make python3-pip
+
+# Install Yarn and TypeScript
+npm install --global yarn typescript
