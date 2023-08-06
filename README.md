@@ -1,5 +1,10 @@
 # WSL-configuration
-Personal WSL installation for development
+Personal Windows Subsystem for Linux installation for development
+
+## Requirements
+
+- Windows 11, or Windows 10 version 1903 or higher
+- WSL feature
 
 ## Enable WSL feature
 
