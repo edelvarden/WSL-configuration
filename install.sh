@@ -2,7 +2,7 @@
 # `apt update` downloads the most recent package information from the sources listed in the "/etc/apt/sources.list"
 # `apt upgrade` command downloads and installs available upgrades of all packages currently installed on the system from the sources configured via sources.list.
 # --------------------------------
-apt update -y; apt upgrade -y
+sudo apt update -y && sudo apt upgrade -y
 
 
 # --------------------------------
