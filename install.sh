@@ -35,7 +35,7 @@ nvm use --lts
 # --------------------------------
 # Base installation
 # --------------------------------
-sudo apt install -y git neofetch unzip make python3-pip
+sudo apt install -y git neofetch unzip make python3-pip python3-venv
 
 # Install Yarn and TypeScript
 npm install --global yarn typescript
