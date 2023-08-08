@@ -10,17 +10,31 @@ fltmc >nul 2>&1 || (
 )
 
 @REM Base installation
-wsl.exe -d Ubuntu --cd %~dp0 --user root sh -c "bash install.sh"
+echo ----------------------------------------------------------------
+echo Installing base packages...
+wsl.exe -d Ubuntu --cd %~dp0 --user root sh -c "bash 1install.sh"  && (
+  echo Base packages installed.
+) || (
+  echo Failed to install base packages!
+)
 
 
 @REM Install ohmyposh with json theme. https://ohmyposh.dev/
+echo ----------------------------------------------------------------
+echo Installing ohmyposh with json theme...
 wsl.exe -d Ubuntu --cd %~dp0 --user root sh -c "curl -s https://ohmyposh.dev/install.sh | bash -s"
 wsl.exe -d Ubuntu --cd %~dp0 --user user sh -c "cat powerlevel10k_rainbow.omp.json > ~/powerlevel10k_rainbow.omp.json"
 wsl.exe -d Ubuntu --cd %~dp0 --user user sh -c "bash install_ohmyposh.sh"
 
 
 @REM Install docker
-wsl.exe -d Ubuntu --cd %~dp0 --user root sh -c "bash install_docker.sh"
+echo ----------------------------------------------------------------
+echo Installing Docker...
+wsl.exe -d Ubuntu --cd %~dp0 --user root sh -c "bash install_docker.sh"  && (
+  echo Docker installed.
+) || (
+  echo Failed to install Docker!
+)
 
 
 @REM Enable systemd
