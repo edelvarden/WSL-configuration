@@ -10,21 +10,21 @@ fltmc >nul 2>&1 || (
 )
 
 @REM Base installation
-wsl.exe -d Ubuntu --user root sh -c "bash install.sh"
+wsl.exe -d Ubuntu --cd %~dp0 --user root sh -c "bash install.sh"
 
 
 @REM Install ohmyposh with json theme. https://ohmyposh.dev/
-wsl.exe -d Ubuntu --user root sh -c "curl -s https://ohmyposh.dev/install.sh | bash -s"
-wsl.exe -d Ubuntu --user user sh -c "cat powerlevel10k_rainbow.omp.json > ~/powerlevel10k_rainbow.omp.json"
-wsl.exe -d Ubuntu --user user sh -c "bash install_ohmyposh.sh"
+wsl.exe -d Ubuntu --cd %~dp0 --user root sh -c "curl -s https://ohmyposh.dev/install.sh | bash -s"
+wsl.exe -d Ubuntu --cd %~dp0 --user user sh -c "cat powerlevel10k_rainbow.omp.json > ~/powerlevel10k_rainbow.omp.json"
+wsl.exe -d Ubuntu --cd %~dp0 --user user sh -c "bash install_ohmyposh.sh"
 
 
 @REM Install docker
-wsl.exe -d Ubuntu --user root sh -c "bash install_docker.sh"
+wsl.exe -d Ubuntu --cd %~dp0 --user root sh -c "bash install_docker.sh"
 
 
 @REM Enable systemd
-wsl.exe -d Ubuntu --user root sh -c "bash enable_systemd.sh"
+wsl.exe -d Ubuntu --cd %~dp0 --user root sh -c "bash enable_systemd.sh"
 wsl.exe --shutdown
 
 echo ----------------------------------------------------------------
