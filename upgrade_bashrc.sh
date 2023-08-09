@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Get the current working directory
 scriptroot=$(pwd)
 
@@ -15,12 +13,9 @@ if [ ! -w "$scriptroot/.bashrc" ]; then
   exit 1
 fi
 
-# Get the contents of the .bashrc file
-custom_bashrc_content=$(cat "$scriptroot/.bashrc")
-
 # Check if the bashrc_content exists in the .bashrc file
 if ! grep -q 'eval "$(oh-my-posh init bash --config ~/powerlevel10k_rainbow.omp.json)"' ~/.bashrc; then
-  echo "$custom_bashrc_content" >> ~/.bashrc
+  cat "$scriptroot/.bashrc" >> ~/.bashrc
 else
   echo "Custom .bashrc upgrades already added!"
 fi
